@@ -7256,3 +7256,13 @@ body main .team-page {
 .client.banner-bg.invert.invert-black .icon-black {
     background: url('../images/pattern-black-sketch.png') no-repeat center center;
 }
+
+input[type="submit"]:disabled{
+    opacity: 0.3;
+
+}
+input[type="submit"]:disabled:hover{
+    background: url('../images/btn1-bg.jpg');
+    opacity: 0.3;
+    
+}

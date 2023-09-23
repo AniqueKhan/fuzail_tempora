@@ -27,15 +27,7 @@ def contact_view(request):
 
             Contact.objects.create(email=email,subject=subject, first_name=first_name,last_name=last_name, message=message)
 
-            # Sending email to myself
-            # email_subject = "You got a message from your live portfolio website"
-            # email_msg = f"Name : {name}\nEmail : {email}\nMessage : {message}"
-            # send_mail(
-            #     subject=email_subject,
-            #     message=email_msg,
-            #     from_email=settings.EMAIL_HOST_USER,
-            #     recipient_list=[settings.EMAIL_HOST_USER]
-            # )
+
 
             return JsonResponse({"success": True})
         else:

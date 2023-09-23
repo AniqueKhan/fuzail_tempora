@@ -62,6 +62,7 @@
     />
     <link href="{% static 'css/theme.css' %}" rel="stylesheet" />
     <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+    <script src="{% static 'js/jquery.min.js' %}"></script>
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -984,127 +985,72 @@
                     </div>
                 </section> -->
           <!-- End Client Say -->
-          <section
-            class="default-section contact-part home-icon pad-bottom-remove"
-          >
+          <section class="default-section contact-part home-icon pad-bottom-remove">
             <div class="container">
-              <div class="title text-center">
-                <h2 class="text-coffee">Contact Us</h2>
-                <h6 class="heade-xs">
-                  We are a second-generation family business established in 1972
-                </h6>
-              </div>
-              <div class="row">
-                <div
-                  class="col-md-8 col-sm-8 col-xs-12 wow fadeInDown animated"
-                  data-wow-duration="1000ms"
-                  data-wow-delay="300ms"
-                  style="
-                    visibility: visible;
-                    animation-duration: 1000ms;
-                    animation-delay: 300ms;
-                    animation-name: fadeInDown;
-                  "
-                >
-                  <h5 class="text-coffee">Leave us a Message</h5>
-                  <p>
-                    Aenean massa diam, viverra vitae luctus sed, gravida eget
-                    est. Etiam nec ipsum porttitor, consequat libero eu,
-                    dignissim eros. Nulla auctor lacinia enim id mollis.
-                  </p>
-                  <form
-                    id="contactForm"
-                    class="form"
-                    method="post"
-                    name="contact-form"
-                  >
-                    {% csrf_token %}
-                    <div class="alert-container" style="display: none"></div>
-                    <div class="row">
-                      <div class="col-md-6 col-sm-6 col-xs-12">
-                        <label>First Name *</label>
-                        {{form.first_name}}
-                      </div>
-                      <div class="col-md-6 col-sm-6 col-xs-12">
-                        <label>Last Name *</label>
-                        {{form.last_name}}
-                      </div>
-                      <div class="col-md-6 col-sm-6 col-xs-12">
-                        <label>Email *</label>
-                        {{form.email}}
-                      </div>
-                      <div class="col-md-6 col-sm-6 col-xs-12">
-                        <label>Subject *</label>
-                        {{form.subject}}
-                      </div>
-                      <div class="col-md-12 col-sm-12 col-xs-12">
-                        <label>Your Message *</label>
-                        {{form.message}}
-                      </div>
-                      <div class="col-md-12 col-sm-12 col-xs-12">
-                        <input
-                          name="submit"
-                          value="SEND MESSAGE"
-                          class="btn-black pull-right send_message"
-                          type="submit"
-                        />
-                      </div>
+                <div class="title text-center">
+                    <h2 class="text-coffee">Contact Us</h2>
+                    <h6 class="heade-xs">We are a second-generation family business established in 1972</h6>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-sm-8 col-xs-12 wow fadeInDown animated" data-wow-duration="1000ms" data-wow-delay="300ms" style="visibility: visible; animation-duration: 1000ms; animation-delay: 300ms; animation-name: fadeInDown;">
+                        <h5 class="text-coffee">Leave us a Message</h5>
+                        <p>Aenean massa diam, viverra vitae luctus sed, gravida eget est. Etiam nec ipsum porttitor, consequat libero eu, dignissim eros. Nulla auctor lacinia enim id mollis.</p>
+                        
+                        
+                        
+                        <form class="form" method="post"  id="contactForm">
+                          {% csrf_token %}
+                            <div class="alert-container" style="display: none;"></div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <label>First Name *</label>
+                                    <input name="first_name" type="text" required="">
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <label>Last Name *</label>
+                                    <input name="last_name" type="text" required="">
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <label>Email *</label>
+                                    <input name="email" type="email" required="">
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <label>Subject *</label>
+                                    <input name="subject" type="text" required="">
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <label>Your Message *</label>
+                                    <textarea name="message" required=""></textarea>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <input name="submit" value="SEND MESSAGE" class="btn-black pull-right send_message" type="submit">
+                                </div>
+                            </div>
+                        </form>
+
+
                     </div>
-                  </form>
+                    <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInDown animated" data-wow-duration="1000ms" data-wow-delay="300ms" style="visibility: visible; animation-duration: 1000ms; animation-delay: 300ms; animation-name: fadeInDown;">
+                        <address>
+                            <span class="text-primary co-title">Our Address</span>
+                            <p>Lorem Ipsum</p>
+                            <p><a href="tel:1234567890">123 456 7890</a>
+                                <br> <a href="mailto:support@despina.com">example@example.com</a></p>
+                        </address>
+                        <h5 class="text-coffee">Opening Hours</h5>
+                        <ul class="time-list">
+                            <li><span class="week-name">Monday</span> <span>12-6 PM</span></li>
+                            <li><span class="week-name">Tuesday</span> <span>12-6 PM</span></li>
+                            <li><span class="week-name">Wednesday</span> <span>12-6 PM</span></li>
+                            <li><span class="week-name">Thursday</span> <span>12-6 PM</span></li>
+                            <li><span class="week-name">Friday</span> <span>12-6 PM</span></li>
+                            <li><span class="week-name">Saturday</span> <span>12-6 PM</span></li>
+                            <li><span class="week-name">Sunday</span> <span>Closed</span></li>
+                        </ul>
+                    </div>
                 </div>
-                <div
-                  class="col-md-4 col-sm-4 col-xs-12 wow fadeInDown animated"
-                  data-wow-duration="1000ms"
-                  data-wow-delay="300ms"
-                  style="
-                    visibility: visible;
-                    animation-duration: 1000ms;
-                    animation-delay: 300ms;
-                    animation-name: fadeInDown;
-                  "
-                >
-                  <address>
-                    <span class="text-primary co-title">Our Address</span>
-                    <p>Lorem Ipsum</p>
-                    <p>
-                      <a href="tel:1234567890">123 456 7890</a> <br />
-                      <a href="mailto:support@despina.com"
-                        >example@example.com</a
-                      >
-                    </p>
-                  </address>
-                  <h5 class="text-coffee">Opening Hours</h5>
-                  <ul class="time-list">
-                    <li>
-                      <span class="week-name">Monday</span> <span>12-6 PM</span>
-                    </li>
-                    <li>
-                      <span class="week-name">Tuesday</span>
-                      <span>12-6 PM</span>
-                    </li>
-                    <li>
-                      <span class="week-name">Wednesday</span>
-                      <span>12-6 PM</span>
-                    </li>
-                    <li>
-                      <span class="week-name">Thursday</span>
-                      <span>12-6 PM</span>
-                    </li>
-                    <li>
-                      <span class="week-name">Friday</span> <span>12-6 PM</span>
-                    </li>
-                    <li>
-                      <span class="week-name">Saturday</span>
-                      <span>12-6 PM</span>
-                    </li>
-                    <li>
-                      <span class="week-name">Sunday</span> <span>Closed</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
             </div>
-          </section>
+        </section>
           <!-- Start Instagram -->
           <section
             class="instagram-main home-icon wow fadeInDown"
@@ -1513,7 +1459,59 @@
     </div>
     <!-- Back To Top Arrow -->
     <a href="#" class="top-arrow"></a>
-    <script src="{% static 'js/jquery.min.js' %}"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+      $(document).ready(function () {
+        var form = $("#contactForm");
+        console.log(form);
+        var submitButton = form.find('input[type="submit"]');
+    
+        // Handle form submission using AJAX
+        form.on("submit", function (e) {
+          e.preventDefault();
+    
+          // Disable the submit button to prevent multiple submissions
+          submitButton.attr("disabled", true);
+          submitButton.val("Sending..."); // Change the button text
+    
+          $.ajax({
+            type: "POST",
+            url: "/contact_view", // Replace 'contact_view' with the URL of your separate view handling the POST request
+            data: form.serialize(),
+            success: function (response) {
+              // Handle success
+              form.trigger("reset");
+              
+            },
+            error: function (error) {
+              // Handle errors, if any
+              console.log("Error:", error);
+              Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: error,
+              });
+            },
+            complete: function () {
+              // Re-enable the submit button after 5 seconds
+              setTimeout(function () {
+                submitButton.attr("disabled", false);
+                submitButton.val("Submit");
+                Swal.fire({
+                  icon: 'success',
+                  title: 'Success',
+                  text: 'Your message has been sent successfully!',
+                }); // Reset the button text
+              }, 5000);
+            },
+          });
+        });
+      });
+    </script>
+    
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/paroller.js/1.4.1/jquery.paroller.min.js"
       integrity="sha512-jYedLgTWxBXtDBdGhnUgCgbgQ5j450R2LhxXk1G+pBcbaARaEC/qsrIhOtqAAiY7UBylc6bVGH6EFR10RNBXuQ=="
@@ -1541,7 +1539,7 @@
     <script src="{% static 'plugin/animation/wow.min.js' %}"></script>
     <script>
       $(".jumbotron").paroller();
-      console.log($(".jumbotron").paroller());
+   
     </script>
     <script src="{% static 'plugin/parallax/jquery.stellar.js' %}"></script>
     <script src="{% static 'js/app.js' %}"></script>
